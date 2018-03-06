@@ -21,3 +21,33 @@ E A S Y Q U E S T I O N
                 i      s
                   o      t
                 n        
+
+--------------------------------------------
+<From algorithm>
+                        E
+                      /   \
+                    A         S
+                            /    \
+                          Q        Y
+                         /       /
+                        E       U
+                          \    /
+                          I   S
+                            \   \
+                            O   T 
+                          /
+                         N  
+
+Directions:
+root:  E
+left of E: A
+right of E:  S
+right of S:  Y
+left of S: Q
+left of Y: U
+left of Q: E
+left of U: S
+right of S:  T
+right of E:  I
+right of I:  O
+left of O: N
