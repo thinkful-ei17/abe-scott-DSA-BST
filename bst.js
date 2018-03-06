@@ -104,14 +104,21 @@ class BST {
 }
 
 const bst = new BST();
-const word = 'EASYQUESTION';
-console.log(word.charCodeAt(0));
+// const word = 'EASYQUESTION';
+// console.log(word.charCodeAt(0));
 
-for(let i = 0; i < word.length; i++){
-  bst.insert(word[i]);
+// for(let i = 0; i < word.length; i++){
+//   bst.insert(word[i]);
+// }
+// bst.remove('Q');
+// console.log('removed Q')
+// console.log(bst);
+
+const numbers = [3,1,4,6,9,2,5,7];
+for (let i = 0; i < numbers.length; i++){
+  bst.insert(numbers[i]);
 }
-bst.remove('Q');
-console.log('removed Q')
-console.log(bst);
+
+// best.remove(3);
 
 module.exports = BST;
