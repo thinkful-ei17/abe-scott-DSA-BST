@@ -43,3 +43,4 @@ for(let i = 0; i < word.length; i++){
   bst.insert(word[i]);
 }
 
+module.exports = BST;
