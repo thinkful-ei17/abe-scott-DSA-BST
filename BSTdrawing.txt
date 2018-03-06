@@ -1,0 +1,23 @@
+E A S Y Q U E S T I O N
+(A < Z)
+
+                                E
+                            /         \
+                           A            S 
+                        /  \            /   \
+                                       Q         Y
+                                    /          /  \
+                                   E          U 
+                                    \        /
+                                     I      S
+                                      \      \
+                                       O       T
+                                      /
+                                    N
+             e
+         a          s
+                q        y
+               e        u
+                i      s
+                  o      t
+                n        
