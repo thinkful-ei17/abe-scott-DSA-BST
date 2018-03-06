@@ -33,6 +33,74 @@ class BST {
       }
     }
   }
+
+  /**
+   *      3
+   *   2     5 
+   */
+  findMinimum(){
+    if(this.left === null ){
+      return this;
+    } else {
+    return this.left.findMinimum();
+    }
+  }
+
+  _replaceWith(node){
+    if(this.parent){
+      if(this === this.parent.left){
+        this.parent.left = node;
+      } else if (this === this.parent.right){
+        this.parent.right = node;
+      }
+      if(node){
+        node.parent = this.parent;
+      }
+    } else {
+      if(node){
+        this.key = node.key;
+        this.value = node.value;
+        this.left = node.left;
+        this.right = node.right;
+      } else {
+        this.key = null;
+        this.value = null;
+        this.left = null;
+        this.right = null;
+      }
+    }
+  }
+
+  remove(key){
+    if(key === this.key){
+      if(this.left && this.right){
+        // find smallest number that is also bigger number
+        const replacement = this.right.findMinimum();
+        // hold position in tree to fill with new key
+        // move values but save parent and children
+        // we only change key and value of current thing we're on
+        this.key = replacement.key;
+        this.value = replacement.value;
+        replacement.remove(replacement.key);
+      }
+      else if(this.left){
+        this._replaceWith(this.left);
+      } 
+      else if (this.right){
+        this._replaceWith(this.right);
+      } else {
+        this._replaceWith(null);
+      } 
+    } else if (key < this.key && this.left){
+      this.left.remove(key);
+    } else if (key > this.key && this.right){
+      this.right.remove(key);
+    } else {
+      throw new Error('Key Error');
+    }
+
+
+  }
 }
 
 const bst = new BST();
@@ -42,5 +110,8 @@ console.log(word.charCodeAt(0));
 for(let i = 0; i < word.length; i++){
   bst.insert(word[i]);
 }
+bst.remove('Q');
+console.log('removed Q')
+console.log(bst);
 
 module.exports = BST;
